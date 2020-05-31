@@ -1,30 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { View, Text } from 'react-native';
 
-import { Text, View } from 'react-native';
-import { signInSubmit } from '../../store/actions/auth-actions';
-
-const Home = ({ auth, signIn }) => {
-  const [getAuth, setAuth] = useState();
-  
-  console.log({ auth });
-  useEffect(() => {
-    signIn({ size: 1 });
-  }, []);
-  
+const Home = ({ navigation }) => {
   return (
     <View>
-      <Text>auth</Text>
+      <Text>Hello home!</Text>
     </View>
   );
-};
+}
 
-const mapStateToProps = (state) => ({
-  auth: state.auth,
-});
-
-const mapDispatchToProps = {
-  signIn: signInSubmit,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default (Home);
