@@ -1,6 +1,7 @@
 const initialState = {
   loading: false,
-  data: {},
+  data: null,
+  signUpData: null,
   error: null,
 };
 
@@ -12,6 +13,8 @@ export default (state = initialState, action) => {
       return { ...state, error: action.error };
     case 'SIGN_IN_SUCCESS':
       return { ...state, data: action.data };
+    case 'SIGN_UP_SUCCESS':
+      return { ...state, signUpData: action.data };
     default:
       return state;
   }
